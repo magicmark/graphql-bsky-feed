@@ -8,7 +8,7 @@ from server.database import db, Post
 keywords = (
     'graphql',
     'graphiql',
-    'costmo gateway',
+    'cosmo gateway',
     'dataloader',
     'schema stitching',
     'wundergraph',
