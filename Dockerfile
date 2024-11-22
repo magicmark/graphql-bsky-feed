@@ -7,10 +7,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+EXPOSE 8080
+
 RUN mkdir -p /db
 CMD uwsgi \
     --http 127.0.0.1:8080 \
     --wsgi-file server/app.py \
     --callable app \
     --processes 1 \
+    --uid uwsgi \
     --threads 1
