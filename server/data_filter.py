@@ -15,7 +15,7 @@ keywords = (
     'n+1 problem',
     'gql',
     'apollo client',
-    'apollo engine'
+    'apollo engine',
     'apollo federation',
     'apollo gateway',
     'apollo server',
