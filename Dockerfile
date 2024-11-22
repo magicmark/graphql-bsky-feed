@@ -15,5 +15,4 @@ CMD uwsgi \
     --wsgi-file server/app.py \
     --callable app \
     --processes 1 \
-    --uid uwsgi \
     --threads 1
