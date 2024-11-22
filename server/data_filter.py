@@ -12,7 +12,7 @@ keywords = (
     'dataloader',
     'schema stitching',
     'wundergraph',
-    'n+1 problem'
+    'n+1 problem',
     'gql',
     'apollo client',
     'apollo engine'
