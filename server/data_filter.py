@@ -8,7 +8,7 @@ from server.database import db, Post
 keywords = (
     'graphql',
     'graphiql',
-    'cosmo gateway',
+    'cosmo router',
     'dataloader',
     'schema stitching',
     'wundergraph',
@@ -25,6 +25,7 @@ keywords = (
     'grafbase',
     'hasura',
     'appsync',
+    'rover cli',
 )
 
 def contains_keywords(text: str) -> bool:
