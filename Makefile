@@ -1,5 +1,5 @@
 deploy:
-	caprover deploy -h https://captain.larah.dev -b master -a graphql-bksy-feed --default
+	caprover deploy -h https://captain.larah.dev -b main -a graphql-bksy-feed --default
 
 venv: requirements.txt
 	virtualenv venv --python=python3

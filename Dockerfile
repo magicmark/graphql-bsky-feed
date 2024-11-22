@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN mkdir -p /db
-CMD dotenv run -- uwsgi \
+CMD uwsgi \
     --http 127.0.0.1:8080 \
     --wsgi-file server/app.py \
     --callable app \
