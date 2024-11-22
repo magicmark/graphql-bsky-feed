@@ -44,8 +44,8 @@ def operations_callback(ops: defaultdict) -> None:
         record = created_post['record']
 
         # print all texts just as demo that data stream works
-        post_with_images = isinstance(record.embed, models.AppBskyEmbedImages.Main)
-        inlined_text = record.text.replace('\n', ' ')
+        # post_with_images = isinstance(record.embed, models.AppBskyEmbedImages.Main)
+        # inlined_text = record.text.replace('\n', ' ')
         # logger.info(
         #     f'NEW POST '
         #     f'[CREATED_AT={record.created_at}]'
