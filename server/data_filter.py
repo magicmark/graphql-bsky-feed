@@ -19,7 +19,7 @@ keywords = (
     'apollo federation',
     'apollo gateway',
     'apollo server',
-    'apollo studio'
+    'apollo studio',
     'apollo summit',
     'relay client',
     'grafbase',
