@@ -1,4 +1,5 @@
-atproto==0.0.53
+atproto==0.0.55
 peewee~=3.16.2
 Flask~=2.3.2
 python-dotenv~=1.0.0
+pyuwsgi==2.0.28.post1

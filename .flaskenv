@@ -1,3 +1,3 @@
-FLASK_APP=server.app
-FLASK_RUN_PORT=8000
+FLASK_APP=graphql-bsky-feed.larah.dev
+FLASK_RUN_PORT=8080
 FLASK_RUN_HOST=0.0.0.0

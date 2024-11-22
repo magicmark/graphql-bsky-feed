@@ -5,6 +5,31 @@ from atproto import models
 from server.logger import logger
 from server.database import db, Post
 
+keywords = (
+    'graphql',
+    'graphiql',
+    'costmo gateway',
+    'dataloader',
+    'schema stitching',
+    'wundergraph',
+    'fragments',
+    'n+1'
+    'gql',
+    'apollo client',
+    'apollo engine'
+    'apollo federation',
+    'apollo gateway',
+    'apollo server',
+    'apollo studio'
+    'apollo summit',
+    'relay client',
+    'grafbase',
+    'hasura',
+    'appsync',
+)
+
+def contains_keywords(text: str) -> bool:
+    return any(keyword in text.lower() for keyword in keywords)
 
 def operations_callback(ops: defaultdict) -> None:
     # Here we can filter, process, run ML classification, etc.
@@ -21,16 +46,16 @@ def operations_callback(ops: defaultdict) -> None:
         # print all texts just as demo that data stream works
         post_with_images = isinstance(record.embed, models.AppBskyEmbedImages.Main)
         inlined_text = record.text.replace('\n', ' ')
-        logger.info(
-            f'NEW POST '
-            f'[CREATED_AT={record.created_at}]'
-            f'[AUTHOR={author}]'
-            f'[WITH_IMAGE={post_with_images}]'
-            f': {inlined_text}'
-        )
+        # logger.info(
+        #     f'NEW POST '
+        #     f'[CREATED_AT={record.created_at}]'
+        #     f'[AUTHOR={author}]'
+        #     f'[WITH_IMAGE={post_with_images}]'
+        #     f': {inlined_text}'
+        # )
 
-        # only alf-related posts
-        if 'alf' in record.text.lower():
+        # only graphql-related posts
+        if contains_keywords(record.text.lower()):
             reply_root = reply_parent = None
             if record.reply:
                 reply_root = record.reply.root.uri
@@ -48,7 +73,7 @@ def operations_callback(ops: defaultdict) -> None:
     if posts_to_delete:
         post_uris_to_delete = [post['uri'] for post in posts_to_delete]
         Post.delete().where(Post.uri.in_(post_uris_to_delete))
-        logger.info(f'Deleted from feed: {len(post_uris_to_delete)}')
+        # logger.info(f'Deleted from feed: {len(post_uris_to_delete)}')
 
     if posts_to_create:
         with db.atomic():

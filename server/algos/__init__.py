@@ -1,5 +1,5 @@
-from . import whats_alf
+from . import whats_graphql
 
 algos = {
-    whats_alf.uri: whats_alf.handler
+    whats_graphql.uri: whats_graphql.handler
 }
