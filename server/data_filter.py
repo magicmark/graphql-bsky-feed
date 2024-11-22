@@ -13,7 +13,7 @@ keywords = (
     'schema stitching',
     'wundergraph',
     'n+1 problem',
-    'gql',
+    ' gql ',
     'apollo client',
     'apollo engine',
     'apollo federation',
