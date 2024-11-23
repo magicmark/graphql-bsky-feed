@@ -52,6 +52,8 @@ def run(name, operations_callback, stream_stop_event=None):
             _run(name, operations_callback, stream_stop_event)
         except FirehoseError as e:
             # let caprover restart the container
+            print(e)
+            print('FATAL! exiting process...')
             import sys; sys.exit()
 
 
