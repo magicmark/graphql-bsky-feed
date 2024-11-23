@@ -51,8 +51,8 @@ def run(name, operations_callback, stream_stop_event=None):
         try:
             _run(name, operations_callback, stream_stop_event)
         except FirehoseError as e:
-            # here we can handle different errors to reconnect to firehose
-            raise e
+            # let caprover restart the container
+            import sys; sys.exit()
 
 
 def _run(name, operations_callback, stream_stop_event=None):
