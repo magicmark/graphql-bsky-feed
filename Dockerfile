@@ -10,9 +10,4 @@ COPY . .
 EXPOSE 8080
 
 RUN mkdir -p /db
-CMD uwsgi \
-    --http 0.0.0.0:8080 \
-    --wsgi-file server/app.py \
-    --callable app \
-    --processes 1 \
-    --threads 1
+CMD python -m server
